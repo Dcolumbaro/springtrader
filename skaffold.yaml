@@ -15,10 +15,10 @@ build:
         - artifactory.toolchain.lead.prod.liatr.io/docker-registry/liatrio/springtrader-builder:latest
         - artifactory.toolchain.lead.prod.liatr.io/docker-registry/liatrio/springtrader-runner:latest
   local: {}
-#####################################################
+
 deploy:
   helm:
-      flags:
+    flags:
       upgrade: ["--timeout", "600"]
       install: ["--timeout", "600"]
     releases:
@@ -40,4 +40,3 @@ profiles:
     path: /deploy/helm/releases/0/setValues
     value: 
       storageClassName: microk8s-hostpath
-#####################################################
